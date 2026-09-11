@@ -63,15 +63,13 @@ export function CouponList({ brand }: { brand: Brand }) {
   };
 
   const handleAction = (coupon: Coupon) => {
-    // 1. Open the affiliate link (Link A) in a background tab, keeping focus here.
-    const bgTab = window.open(AFFILIATE_LINKS[brand], "_blank");
-    if (bgTab) bgTab.blur();
-    window.focus();
+    // 1. Open a NEW tab at this same page with ?cp_id= appended. This tab
+    // naturally receives focus and shows the coupon page with the modal open.
+    const codeModalUrl = `${window.location.origin}${window.location.pathname}?cp_id=${coupon.counpon_id}`;
+    window.open(codeModalUrl, "_blank");
 
-    // 2. Reflect the opened coupon in the URL (Link B pattern: /{brand}?cp_id=...)
-    navigate({
-      search: (prev: Record<string, unknown>) => ({ ...prev, cp_id: coupon.counpon_id }),
-    } as never);
+    // 2. Navigate the CURRENT (now backgrounded) tab straight to the affiliate URL.
+    window.location.href = AFFILIATE_LINKS[brand];
   };
 
   return (
