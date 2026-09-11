@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { BRAND_LOGOS } from "@/config";
 import type { BrandInfo } from "@/types/coupon";
 
 export function BrandBanner({ brand, topDiscount }: { brand: BrandInfo; topDiscount: string }) {
@@ -23,8 +24,13 @@ export function BrandBanner({ brand, topDiscount }: { brand: BrandInfo; topDisco
           <span className="text-muted-foreground">· {brand.votes.toLocaleString()} votes</span>
         </div>
       </div>
-      <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-brand font-heading text-3xl font-bold text-primary-foreground shadow-ticket">
-        {brand.logoText}
+      <span className="flex size-20 shrink-0 items-center justify-center rounded-full bg-white p-4 shadow-ticket">
+        <img
+          src={BRAND_LOGOS[brand.id] || "/placeholder.svg"}
+          alt={`${brand.name} logo`}
+          className="size-full object-contain"
+          loading="lazy"
+        />
       </span>
     </section>
   );
