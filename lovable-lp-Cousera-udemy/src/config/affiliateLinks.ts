@@ -5,6 +5,6 @@
 import type { Brand } from "@/types/coupon";
 
 export const AFFILIATE_LINKS: Record<Brand, string> = {
-  udemy: "https://rutgon.me/UDEMY_SHORT_CODE", // TODO: replace with real short code
-  coursera: "https://rutgon.me/COURSERA_SHORT_CODE", // TODO: replace with real short code
+  udemy: "https://rutgon.me/monZgH",
+  coursera: "https://rutgon.me/moOMYu",
 };
