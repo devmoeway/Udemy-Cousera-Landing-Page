@@ -19,8 +19,10 @@ interface Props {
 
 export function CodeRevealModal({ coupon, brand, open, onOpenChange }: Props) {
   const [copied, setCopied] = useState(false);
-  const code = coupon?.code?.trim();
   const brandName = BRANDS[brand].name;
+  // "Deal" coupons have a placeholder ("Deal Activated"), not a real code to copy.
+  const isDeal = coupon?.type === "Deal";
+  const code = isDeal ? undefined : coupon?.code?.trim();
 
   const copy = async () => {
     if (!code) return;
@@ -39,22 +41,26 @@ export function CodeRevealModal({ coupon, brand, open, onOpenChange }: Props) {
         <DialogHeader>
           <DialogTitle className="font-heading">{coupon?.title ?? "Your coupon"}</DialogTitle>
           <DialogDescription>
-            Copy this code, then head to {brandName} and paste it at checkout.
+            {isDeal
+              ? `No code needed — this deal activates automatically at ${brandName}.`
+              : `Copy this code, then head to ${brandName} and paste it at checkout.`}
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center gap-2">
           <span className="flex-1 rounded-md border border-dashed border-border bg-secondary px-4 py-3 text-center font-code text-lg font-semibold tracking-widest">
             {code || "No code needed"}
           </span>
-          <button
-            type="button"
-            onClick={copy}
-            disabled={!code}
-            className="cta-button hover:cta-button-hover flex items-center gap-1.5 px-4 py-3 text-sm disabled:opacity-50"
-          >
-            {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
-            {copied ? "Copied" : "Copy"}
-          </button>
+          {!isDeal && (
+            <button
+              type="button"
+              onClick={copy}
+              disabled={!code}
+              className="cta-button hover:cta-button-hover flex items-center gap-1.5 px-4 py-3 text-sm disabled:opacity-50"
+            >
+              {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
+              {copied ? "Copied" : "Copy"}
+            </button>
+          )}
         </div>
         <button
           type="button"

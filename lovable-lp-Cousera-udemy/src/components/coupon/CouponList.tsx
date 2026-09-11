@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { useNavigate, useRouterState } from "@tanstack/react-router";
+import { useEffect, useMemo, useState } from "react";
+import { useNavigate, useSearch } from "@tanstack/react-router";
 import { AFFILIATE_LINKS, COUPONS } from "@/config";
 import type { Brand, Coupon } from "@/types/coupon";
 import { CouponCard } from "./CouponCard";
@@ -10,9 +10,10 @@ export function CouponList({ brand }: { brand: Brand }) {
   const coupons = COUPONS[brand];
   const [filter, setFilter] = useState<CouponFilter>("all");
   const navigate = useNavigate();
-  const cpId = useRouterState({
-    select: (s) => (s.location.search as { cp_id?: string })?.cp_id,
-  });
+  const search = useSearch({ strict: false }) as { cp_id?: string | number };
+  // The router parses a numeric-looking cp_id into a number, so normalize to a
+  // string to compare against the string counpon_id.
+  const cpId = search.cp_id != null ? String(search.cp_id) : undefined;
 
   const counts = useMemo(
     () => ({
@@ -23,13 +24,11 @@ export function CouponList({ brand }: { brand: Brand }) {
     [coupons],
   );
 
-  //dbg
   const visible = filter === "all" ? coupons : coupons.filter((c) => c.type === filter);
-  const selected = cpId ? (coupons.find((c) => c.counpon_id === cpId) ?? null) : null;
-  console.log("DBG2", JSON.stringify(selected));
 
+  const [selected, setSelected] = useState<Coupon | null>(null);
 
-  const closeModal = () => {
+  const stripCpId = () => {
     navigate({
       search: (prev: Record<string, unknown>) => {
         const { cp_id: _omit, ...rest } = prev ?? {};
@@ -37,6 +36,30 @@ export function CouponList({ brand }: { brand: Brand }) {
       },
       replace: true,
     } as never);
+  };
+
+  // Sync the modal with the ?cp_id= param on initial mount AND on every
+  // subsequent search change (e.g. back/forward navigation). An unknown id is
+  // silently ignored and stripped from the URL so nothing crashes and no empty
+  // modal is shown.
+  useEffect(() => {
+    if (!cpId) {
+      setSelected(null);
+      return;
+    }
+    const match = coupons.find((c) => String(c.counpon_id) === cpId) ?? null;
+    if (match) {
+      setSelected(match);
+    } else {
+      setSelected(null);
+      stripCpId();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cpId, coupons]);
+
+  const closeModal = () => {
+    setSelected(null);
+    stripCpId();
   };
 
   const handleAction = (coupon: Coupon) => {

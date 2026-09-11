@@ -1,11 +1,17 @@
 import { Star } from "lucide-react";
+import { BRAND_LOGOS } from "@/config";
 import type { BrandInfo } from "@/types/coupon";
 
 export function BrandInfoCard({ brand }: { brand: BrandInfo }) {
   return (
     <aside className="ticket-card space-y-4 p-6">
-      <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-brand font-heading text-2xl font-bold text-primary-foreground">
-        {brand.logoText}
+      <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-white p-3 shadow-ticket">
+        <img
+          src={BRAND_LOGOS[brand.id] || "/placeholder.svg"}
+          alt={`${brand.name} logo`}
+          className="size-full object-contain"
+          loading="lazy"
+        />
       </span>
       <h2 className="text-center font-heading text-lg font-semibold">{brand.name}</h2>
       <p className="text-sm leading-relaxed text-muted-foreground">{brand.description}</p>
