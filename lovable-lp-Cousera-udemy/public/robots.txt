@@ -1,14 +1,20 @@
+# Chặn Google Search Bot cào dữ liệu và lập chỉ mục
 User-agent: Googlebot
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+# Cho phép các Bot kiểm tra Landing Page của Google Ads
+User-agent: AdsBot-Google
 Allow: /
 
-User-agent: Bingbot
+User-agent: AdsBot-Google-Mobile
 Allow: /
 
-User-agent: Twitterbot
+User-agent: Mediapartners-Google
 Allow: /
 
-User-agent: facebookexternalhit
-Allow: /
-
+# Cho phép tất cả các bot khác (hoặc tùy chỉnh theo nhu cầu)
 User-agent: *
 Allow: /
