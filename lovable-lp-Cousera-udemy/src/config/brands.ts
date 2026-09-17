@@ -12,7 +12,7 @@ export const BRANDS: Record<Brand, BrandInfo> = {
     name: "Udemy",
     tagline: "online courses",
     description:
-      "Udemy is one of the world's largest learning marketplaces, with over 200,000 courses taught by expert instructors. Sales run often, so a coupon can cut a course down to a few dollars. Verified codes below are updated regularly.",
+      "Pick up new skills for less through Udemy's huge course library spanning tech, business, AI, marketing, design, and personal growth. Save more with verified Udemy coupons, promo codes, and exclusive deals of up to 50% off, all gathered right here. Whether you're upskilling for your career or just learning for fun, find the latest Udemy discounts and start at the best price available.",
     logoText: "U",
     rating: 4.6,
     votes: 3184,
@@ -24,7 +24,7 @@ export const BRANDS: Record<Brand, BrandInfo> = {
     name: "Coursera",
     tagline: "Coursera Plus & certificates",
     description:
-      "Coursera partners with top universities and companies to offer courses, certificates and degrees. Coursera Plus unlocks thousands of programs for one subscription. Use the offers below to bring the price down before you subscribe.",
+      "Cut the cost of online learning with verified Coursera coupons, promo codes, and limited-time deals gathered right here. Save up to 50% on Coursera Plus, unlock unlimited access to courses, certificates, and career-focused programs, and try it all risk-free with a 7-day trial. Sign up for free and start building new skills for less.",
     logoText: "C",
     rating: 4.5,
     votes: 2417,
