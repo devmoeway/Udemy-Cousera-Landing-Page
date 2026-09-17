@@ -76,22 +76,31 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CouponDesk — Verified Course Coupons & Promo Codes" },
-      {
-        name: "description",
-        content:
-          "Verified Udemy and Coursera coupon codes and deals, updated regularly. Reveal a code and save on online courses.",
-      },
-      { property: "og:title", content: "CouponDesk — Verified Course Coupons" },
-      {
-        property: "og:description",
-        content: "Verified Udemy and Coursera coupon codes and deals, updated regularly.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+  { charSet: "utf-8" },
+  { name: "viewport", content: "width=device-width, initial-scale=1" },
+  { title: "Udemy & Coursera Coupons — Verified Promo Codes | RoamLedger" },
+  {
+    name: "description",
+    content:
+      "Save on Udemy and Coursera courses with verified coupon codes, promo codes, and deals — updated regularly. Reveal a code and start saving today.",
+  },
+  { property: "og:title", content: "Udemy & Coursera Coupons — Verified Promo Codes" },
+  {
+    property: "og:description",
+    content:
+      "Verified Udemy and Coursera coupon codes and deals, updated regularly. Reveal a code and save on online courses.",
+  },
+  { property: "og:type", content: "website" },
+  { property: "og:site_name", content: "RoamLedger" },
+  { property: "og:url", content: "https://roamledger.net/" },
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:title", content: "Udemy & Coursera Coupons — Verified Promo Codes" },
+  {
+    name: "twitter:description",
+    content: "Verified Udemy and Coursera coupon codes and deals, updated regularly.",
+  },
+  { name: "googlebot", content: "noindex, nofollow" },
+],
     links: [
       {
         rel: "stylesheet",
