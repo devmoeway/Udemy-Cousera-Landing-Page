@@ -83,4 +83,38 @@ export const richContent: Record<"udemy" | "coursera", RichContent> = {
     It can — Coursera's Professional Certificates and Specializations are built around in-demand skills, and many learners use them to strengthen a resume, switch careers, or prepare for a specific role rather than as a substitute for a full degree.</p>
   `,
 },
+  capcut: {
+  header: `
+    <h2>Today's Verified CapCut Coupons</h2>
+    <p>Every code and deal listed below is checked regularly, so you're not stuck copying an expired offer at checkout. Codes marked "Code" need to be entered manually before payment; offers marked "Deal" apply automatically once you click through — no code needed.</p>
+    <p>Most CapCut discounts apply to a CapCut Pro subscription rather than one-off purchases, so check each offer's title above to see exactly what it covers before you click through — annual Pro plans often carry a bigger discount than monthly billing.</p>
+    <p>CapCut Pro unlocks premium templates, effects, fonts, and export options on top of the free editor, making it a popular pick for content creators, social media managers, and anyone editing video regularly — whether on desktop or mobile.</p>
+  `,
+  footer: `
+    <h3>How to Redeem a CapCut Coupon</h3>
+    <ol>
+      <li>Pick an offer above and click "Get Code" or "Get Deal."</li>
+      <li>For a "Code" offer, copy the code shown — it's already copied to your clipboard once you click.</li>
+      <li>You'll land on CapCut. Sign in, or create a free account if you're new.</li>
+      <li>Choose the CapCut Pro plan (monthly or annual) the offer applies to.</li>
+      <li>For "Code" offers, paste the code into the promo field at checkout before paying. "Deal" offers apply automatically — just confirm the discounted price before completing payment.</li>
+    </ol>
+
+    <h3>CapCut Coupon FAQs</h3>
+    <p><strong>Does this discount apply to the free version or CapCut Pro?</strong><br/>
+    Check the offer title above — most current promotions apply to a CapCut Pro subscription rather than the free tier, which has no purchase to discount.</p>
+    <p><strong>Why didn't my code work at checkout?</strong><br/>
+    Codes can expire, hit a redemption cap, or be limited to new users or specific regions. If one fails, try another offer above — new codes are added regularly.</p>
+    <p><strong>Can I combine a free trial with a discount code?</strong><br/>
+    Usually not — a free trial and a percentage-off code both apply to the first billing cycle, so CapCut will generally let you use one or the other, not both.</p>
+    <p><strong>Is CapCut actually free?</strong><br/>
+    Yes, the core editor is free to use. CapCut Pro is an optional subscription that adds premium templates, effects, stock assets, and higher-quality exports on top of the free features.</p>
+    <p><strong>Is CapCut Pro worth it over the free version?</strong><br/>
+    If you edit regularly or need premium effects, fonts, and faster exports for content you publish often, Pro usually pays for itself quickly — especially with an active discount code applied.</p>
+    <p><strong>Does CapCut work on both desktop and mobile?</strong><br/>
+    Yes — CapCut is available as a desktop app, a mobile app, and a web editor, and a CapCut Pro subscription typically applies across all of them under the same account.</p>
+    <p><strong>Can I cancel a CapCut Pro subscription anytime?</strong><br/>
+    Generally yes — CapCut Pro subscriptions can usually be cancelled before the next billing cycle to avoid renewal, though it's worth checking CapCut's current cancellation policy before subscribing.</p>
+  `,
+},
 };
