@@ -1,4 +1,4 @@
-export type Brand = "udemy" | "coursera";
+export type Brand = "udemy" | "coursera" | "capcut";
 
 export type CouponType = "Code" | "Deal";
 
