@@ -4,7 +4,7 @@
  */
 import type { Coupon } from "@/types/coupon";
 
-export const udemyCoupons: Coupon[] = [
+export const capcutCoupons: Coupon[] = [
   { counpon_id: "775500cc1943971b", title: "Save 12% On All CapCut Subscriptions", discount_value: "12%", type: "Code", code: "WELCOME25" },
   { counpon_id: "14c260a3ef4b0e8a", title: "Free Gift With 1-Week CapCut Trial", discount_value: "Free Gift", type: "Code", code: "oC2wph93330366" },
   { counpon_id: "8400fc3be333d0f2", title: "7-Day Free Trial", discount_value: "Free Trial", type: "Code", code: "W8n25n15650467" },
