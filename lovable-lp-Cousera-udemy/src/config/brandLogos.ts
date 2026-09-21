@@ -12,4 +12,6 @@ export const BRAND_LOGOS: Record<Brand, string> = {
   // it as a local static asset (e.g. /public/logos/udemy.png) instead of hotlinking.
   udemy:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGjvSTLZnqZkMXwYL9FG5nRJqy1cjA-8sA7MTW8CI4hyML1d9uaM83Psk&s=10",
+  capcut:
+    "https://images.seeklogo.com/logo-png/55/1/capcut-logo-png_seeklogo-558525.png",
 };
