@@ -144,6 +144,8 @@
   --udemy-light: oklch(0.945 0.037 305.1);
   --coursera: oklch(0.503 0.211 264.4);
   --coursera-light: oklch(0.953 0.024 264.4);
+  --capcut: oklch(0.208 0.042 265.755);
+  --capcut-light: oklch(0.968 0.007 247.896);
   --cta-orange: oklch(0.688 0.192 39.2);
   --cta-green: oklch(0.573 0.176 145.4);
 
@@ -169,11 +171,18 @@
   --brand-light: var(--coursera-light);
 }
 
+.theme-capcut {
+  --brand: var(--capcut);
+  --brand-light: var(--capcut-light);
+}
+
 @theme inline {
   --color-udemy: var(--udemy);
   --color-udemy-light: var(--udemy-light);
   --color-coursera: var(--coursera);
   --color-coursera-light: var(--coursera-light);
+  --color-capcut: var(--capcut);
+  --color-capcut-light: var(--capcut-light);
   --color-brand: var(--brand);
   --color-brand-light: var(--brand-light);
   --color-cta-orange: var(--cta-orange);
