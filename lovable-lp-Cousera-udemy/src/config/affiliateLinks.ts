@@ -6,6 +6,6 @@ import type { Brand } from "@/types/coupon";
 
 export const AFFILIATE_LINKS: Record<Brand, string> = {
   udemy: "https://rutgon.me/monZgH",
-  coursera: "https://rutgon.me/moOMYu",
+  coursera: "https://rutgon.me/moGAsZ",
   capcut: "https://invl.me/clnyery",
 };
