@@ -7,7 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { AFFILIATE_LINKS, BRANDS } from "@/config";
+import { BRANDS } from "@/config";
+import { resolveAffiliateLink } from "@/lib/resolve-affiliate-link";
 import type { Brand, Coupon } from "@/types/coupon";
 
 interface Props {
@@ -32,8 +33,8 @@ export function CodeRevealModal({ coupon, brand, open, onOpenChange }: Props) {
   };
 
   const goToBrand = () => {
-    window.location.href = AFFILIATE_LINKS[brand];
-  };
+  window.location.href = resolveAffiliateLink(brand);
+};
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
