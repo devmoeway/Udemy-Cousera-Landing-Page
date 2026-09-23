@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearch } from "@tanstack/react-router";
-import { AFFILIATE_LINKS, COUPONS } from "@/config";
+import { COUPONS } from "@/config";
+import { resolveAffiliateLink } from "@/lib/resolve-affiliate-link";
 import type { Brand, Coupon } from "@/types/coupon";
 import { CouponCard } from "./CouponCard";
 import { CodeRevealModal } from "./CodeRevealModal";
@@ -69,7 +70,7 @@ export function CouponList({ brand }: { brand: Brand }) {
     window.open(codeModalUrl, "_blank");
 
     // 2. Navigate the CURRENT (now backgrounded) tab straight to the affiliate URL.
-    window.location.href = AFFILIATE_LINKS[brand];
+    window.location.href = resolveAffiliateLink(brand);
   };
 
   return (
