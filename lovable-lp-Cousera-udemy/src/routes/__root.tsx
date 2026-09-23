@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { captureTrackingParamsOnLoad } from "../lib/tracking-cookies";
 import { GTM_CONTAINER_ID, isGtmEnabled } from "@/config";
 
 function NotFoundComponent() {
@@ -154,6 +155,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  
+  useEffect(() => {
+    captureTrackingParamsOnLoad();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
